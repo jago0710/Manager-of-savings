@@ -1,4 +1,4 @@
-import Count from './Count.js'
+import Logger from './Logger.js'
 import './App.css';
 import Navbar from './Navbar.js';
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <Count></Count>
+      <Logger></Logger>
     </>
   );
 }

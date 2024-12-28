@@ -8,7 +8,7 @@ export default function Navbar() {
     }
 
     return (
-        <div className="flex flex-row justify-between items-center p-5">
+        <div className="flex flex-row justify-evenly items-center p-5">
             <p className='text-xl'>Bank of saving</p>
             <p className="">Bienvenido {username} </p>
             <button className="p-2 rounded-lg border" onClick={closeSession}>Cerrar Session</button>

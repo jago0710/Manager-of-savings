@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-function Count({ value }) {
+function Logger({ value }) {
   const [countSavings, setCountSavings] = useState(0);
   const [totalMoney, setTotalMoney] = useState(0);
+
 
   console.log(countSavings);
   console.log("Money: " + totalMoney);
@@ -55,12 +56,12 @@ function Count({ value }) {
 
   return (
     <div className="flex flex-row justify-center gap-7 m-7">
-      <div className="w-6/12 border border-gray-300 rounded p-5">
+      <div className="w-4/12 border border-gray-300 rounded p-5">
                <p className="font-bold">Resumen de la cuenta</p>
-               <b className="totalMoney"> Saldo: {totalMoney}</b>
+               <b className="totalMoney"> Saldo: {Intl.NumberFormat("es-Es", { style: "currency", currency: "EUR" }).format(totalMoney)}</b>
                <p className="text-gray-600 ">Número: 0710 2002 2304 2001</p>
         </div>
-      <div className="w-6/12 border border-gray-300 rounded p-5">
+      <div className="w-4/12 border border-gray-300 rounded p-5">
       <p>
          Acciones Rápidas   
       </p>
@@ -76,10 +77,10 @@ function Count({ value }) {
           Registrar
         </button>
       </form>
-        <div>{getnumbersOfShortcurs}</div>
+        <div className="text-black">{getnumbersOfShortcurs}</div>
       </div>
     </div>
   );
 }
 
-export default Count;
+export default Logger;
