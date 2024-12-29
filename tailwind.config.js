@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'app': "url('../public/background.svg')",
+      },
+      gridAutoColumns: {
+        '80/20': "80%, 20%"
+      }
+    },
   },
   plugins: [],
 }

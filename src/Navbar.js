@@ -8,10 +8,10 @@ export default function Navbar() {
     }
 
     return (
-        <div className="flex flex-row justify-evenly items-center p-5">
-            <p className='text-xl'>Bank of saving</p>
-            <p className="">Bienvenido {username} </p>
-            <button className="p-2 rounded-lg border" onClick={closeSession}>Cerrar Session</button>
+        <div className="flex flex-row justify-between items-center py-7">
+            <p className='text-2xl font-bold text-center' >Savings</p>
+            <p className="text-center">Bienvenido {username} </p>
+            <button className="p-2 rounded-lg border transition duration-300 hover:scale-110" onClick={closeSession}>Cerrar Session</button>
         </div>
     )
 }

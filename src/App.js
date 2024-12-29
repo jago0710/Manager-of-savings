@@ -4,10 +4,10 @@ import Navbar from './Navbar.js';
 
 function App() {
   return (
-    <>
+    <div className='w-11/12 m-auto bg-scroll'>
       <Navbar></Navbar>
-      <Logger></Logger>
-    </>
+      <Logger value="Hola"></Logger>
+    </div>
   );
 }
 
