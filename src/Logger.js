@@ -3,13 +3,14 @@ import { useState } from "react";
 import {data} from "./data.js"
 
 
-function Logger({ value }) {
-  const [countSavings, setCountSavings] = useState();
+
+function Logger({ username }) {
+  const [countSavings, setCountSavings] = useState(null);
   const [totalMoney, setTotalMoney] = useState(0);
   const [stateCount, setStateCount] = useState(data);
 
 console.log(stateCount);
-console.log(value)
+console.log(username)
   
   const changeStateCount = () => {
     setStateCount(...stateCount)
@@ -22,8 +23,20 @@ console.log(value)
     setCountSavings(parseFloat(e.target.value));
   };
 
-  const saveInDB = (e) => {
-    setStateCount(...stateCount, e.target.value)
+  const saveMovement = (amount) => {
+    const today = new Date();
+    setStateCount({...stateCount, movements: [
+      ...stateCount.movements, 
+      { 
+        date : today.toLocaleDateString(),
+        description: amount < 0 ? "Retiro" : "Ingreso",
+        amount: Intl.NumberFormat("es-Es", {style: "currency", currency: "EUR"}).format(amount), 
+        total: Intl.NumberFormat("es-Es", {style: "currency", currency: "EUR"}).format(totalMoney + parseFloat(amount)), 
+        user: username
+      }
+    ]
+  }
+  )
   }
 
   const saveValue = (e) => {
@@ -34,13 +47,14 @@ console.log(value)
       let check = confirm("Estas seguro que quieres sacar dinero?");
       if (check === true) {
         setTotalMoney(parseFloat(totalMoney) + parseFloat(e.target.value));
-        saveInDB(e.target.value);
+        saveMovement(e.target.value);
         setCountSavings(0);
       } else {
         setCountSavings(0);
       }
     } else {
       setTotalMoney(parseFloat(totalMoney) + parseFloat(e.target.value));
+      saveMovement(e.target.value)
       setCountSavings(0);
     }
   };

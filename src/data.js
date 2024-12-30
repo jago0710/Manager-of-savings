@@ -14,13 +14,6 @@ export const data = {
                 amount: Intl.NumberFormat("es-Es", {style: "currency", currency: "EUR"}).format(0),      
                 total: Intl.NumberFormat("es-Es", {style: "currency", currency: "EUR"}).format(0),
                 user: "Joel"
-            },
-            {
-                date: today.toLocaleDateString(),
-                description: "Siguiente",
-                amount: Intl.NumberFormat("es-Es", {style: "currency", currency: "EUR"}).format(0),      
-                total: Intl.NumberFormat("es-Es", {style: "currency", currency: "EUR"}).format(0),
-                user: "Joel"
             }
         ]
     };

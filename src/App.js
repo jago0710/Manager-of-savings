@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='w-11/12 m-auto bg-scroll'>
       <Navbar></Navbar>
-      <Logger value="Hola"></Logger>
+      <Logger username="Joel"></Logger>
     </div>
   );
 }
