@@ -84,7 +84,7 @@ console.log(username)
         <div className="grid grid-cols-5 justify-around py-7 border-b-gray-200 border-b text-center">
           <p>{movement.date}</p>
           <p>{movement.description}</p>
-          <p>{movement.amount}</p>
+          <p style={{color: parseFloat(movement.amount) < 0 ? 'red' : 'green'}}>{movement.amount}</p>
           <p>{movement.total}</p>
           <p >{movement.user}</p>
         </div>
